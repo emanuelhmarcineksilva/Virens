@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101713">
+    <meta name="description" content="Diagnóstico operacional e plano de recarga para as agências Bangkok, Vienna, Hanoi e Zurich.">
+    <title>Diagnóstico Operacional | Virens</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Virens, início">
+        <span class="brand-mark" aria-hidden="true">ϟ</span>
+        <span class="brand-copy"><strong>Virens</strong><small>GRUPO 6</small></span>
+      </a>
+      <span class="topbar-label">DIAGNÓSTICO OPERACIONAL</span>
+    </header>
+
+    <main>
+      <section class="overview page-shell" aria-labelledby="page-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">PLANEJAMENTO DE RECARGA</span>
+            <h1 id="page-title">Transforme restrições<br>de recarga em<br><span>eficiência de frota.</span></h1>
+            <p>Selecione uma agência para analisar o contexto operacional e gerar uma estratégia logística personalizada.</p>
+          </div>
+          <div class="agency-picker">
+            <label for="agency-select">SELECIONAR AGÊNCIA</label>
+            <div class="select-wrap">
+              <span class="select-icon" aria-hidden="true">⌖</span>
+              <select id="agency-select" aria-label="Selecionar agência">
+                <option value="bangkok">Agência Bangkok</option>
+                <option value="vienna">Agência Vienna</option>
+                <option value="hanoi">Agência Hanoi</option>
+                <option value="zurich">Agência Zurich</option>
+              </select>
+              <span class="select-chevron" aria-hidden="true">⌄</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="diagnostic-grid">
+          <article class="card profile-card">
+            <div class="card-heading">
+              <span class="icon-badge green" aria-hidden="true">⌂</span>
+              <div>
+                <span class="section-kicker">01 · PERFIL</span>
+                <h2>Particularidades da Agência</h2>
+              </div>
+            </div>
+            <p class="card-intro" id="profile-intro"></p>
+            <dl class="profile-list" id="profile-list"></dl>
+          </article>
+
+          <article class="card issues-card">
+            <div class="card-heading">
+              <span class="icon-badge coral" aria-hidden="true">△</span>
+              <div>
+                <span class="section-kicker">02 · DIAGNÓSTICO</span>
+                <h2>Problemas Atuais</h2>
+              </div>
+            </div>
+            <p class="card-intro">Ocorrências que já impactam custo, disponibilidade e atendimento.</p>
+            <ul class="issue-list" id="issue-list"></ul>
+          </article>
+
+          <article class="card constraints-card">
+            <div class="card-heading">
+              <span class="icon-badge amber" aria-hidden="true">◷</span>
+              <div>
+                <span class="section-kicker">03 · RESTRIÇÕES</span>
+                <h2>Empecilhos Operacionais</h2>
+              </div>
+            </div>
+            <p class="card-intro" id="constraints-intro"></p>
+            <div class="constraint-list" id="constraint-list"></div>
+          </article>
+        </div>
+
+        <div class="generate-area">
+          <p><span aria-hidden="true">✦</span> Análise baseada nas quatro semanas de operação</p>
+          <button class="primary-button" id="generate-button" type="button">
+            Gerar solução de logística <span aria-hidden="true">→</span>
+          </button>
+          <small>A recomendação considera demanda, infraestrutura, reservas e custo de energia.</small>
+        </div>
+      </section>
+
+      <section class="solution-section" id="solution-section" aria-labelledby="solution-title" hidden>
+        <div class="page-shell solution-shell">
+          <div class="solution-heading">
+            <div>
+              <span class="solution-pill"><span aria-hidden="true">✦</span> SOLUÇÃO GERADA PELA IA</span>
+              <h2 id="solution-title">Plano de eficiência · <span id="solution-agency"></span></h2>
+              <p id="solution-summary"></p>
+            </div>
+            <div class="updated-badge"><span class="pulse-dot" aria-hidden="true"></span><span><small>MODELO ATUALIZADO</small><strong>Hoje, 09:42</strong></span></div>
+          </div>
+
+          <div class="kpi-strip" id="kpi-strip" aria-label="Indicadores da solução"></div>
+
+          <article class="card solution-card">
+            <div class="solution-card-heading">
+              <div><span class="section-kicker">INDICADORES VITAIS</span><h3>Saúde da Operação</h3></div>
+              <span class="period-tag">JANELA PÚBLICA</span>
+            </div>
+            <div class="health-metrics" id="health-metrics"></div>
+            <div class="health-note"><span aria-hidden="true">✦</span><div><strong id="health-note-title"></strong><span id="health-note-copy"></span></div></div>
+          </article>
+
+          <article class="card recommendation-card">
+            <div class="solution-card-heading">
+              <div><span class="section-kicker">ESTRATÉGIA RECOMENDADA</span><h3>Decisões e resolução dos problemas</h3></div>
+              <button class="secondary-button" id="download-button" type="button">↓ <span>Baixar plano</span></button>
+            </div>
+            <p class="recommendation-intro">Cada decisão abaixo está vinculada ao problema que resolve e ao efeito observado na simulação.</p>
+            <div class="decision-list" id="decision-list"></div>
+            <div class="recommendation-footer"><span class="pulse-dot" aria-hidden="true"></span><span id="risk-note"></span></div>
+          </article>
+
+          <p class="source-note">Fonte: simulações locais e pesos identificados em 21/10/2026. Notas e efeitos são estimativas da janela pública descrita em Info.md.</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
